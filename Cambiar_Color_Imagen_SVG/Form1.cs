@@ -73,5 +73,15 @@ namespace Cambiar_Color_Imagen_SVG
         {
 
         }
+
+        private void panelModerno2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LayoutPanelIzquierdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

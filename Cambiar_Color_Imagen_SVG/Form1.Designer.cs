@@ -32,13 +32,14 @@
             this.ResizeForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.panelIzquierdo = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.btnLogo = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             this.btnMaximizarNormal = new Guna.UI2.WinForms.Guna2Button();
             this.btnCerrar = new Guna.UI2.WinForms.Guna2Button();
-            this.panelIzquierdo = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.panelCentral = new System.Windows.Forms.Panel();
+            this.LayoutPanelIzquierdo = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,42 @@
             this.lblLogo.TabIndex = 5;
             this.lblLogo.Text = "Código limpio";
             this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
+            // 
+            // panelIzquierdo
+            // 
+            this.panelIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(123)))), ((int)(((byte)(225)))));
+            this.panelIzquierdo.Controls.Add(this.LayoutPanelIzquierdo);
+            this.panelIzquierdo.Controls.Add(this.guna2Button1);
+            this.panelIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelIzquierdo.Location = new System.Drawing.Point(1, 35);
+            this.panelIzquierdo.Name = "panelIzquierdo";
+            this.panelIzquierdo.Size = new System.Drawing.Size(220, 484);
+            this.panelIzquierdo.TabIndex = 1;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
+            this.guna2Button1.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 439);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(220, 45);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Text = "Acerca de";
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Location = new System.Drawing.Point(221, 35);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(578, 484);
+            this.panelCentral.TabIndex = 2;
             // 
             // btnLogo
             // 
@@ -140,51 +177,27 @@
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // panelIzquierdo
+            // LayoutPanelIzquierdo
             // 
-            this.panelIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(123)))), ((int)(((byte)(225)))));
-            this.panelIzquierdo.Controls.Add(this.guna2Button1);
-            this.panelIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelIzquierdo.Location = new System.Drawing.Point(1, 35);
-            this.panelIzquierdo.Name = "panelIzquierdo";
-            this.panelIzquierdo.Size = new System.Drawing.Size(220, 414);
-            this.panelIzquierdo.TabIndex = 1;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Button1.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 369);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(220, 45);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Acerca de";
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Location = new System.Drawing.Point(221, 35);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(578, 414);
-            this.panelCentral.TabIndex = 2;
+            this.LayoutPanelIzquierdo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LayoutPanelIzquierdo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LayoutPanelIzquierdo.Location = new System.Drawing.Point(0, 0);
+            this.LayoutPanelIzquierdo.Name = "LayoutPanelIzquierdo";
+            this.LayoutPanelIzquierdo.Padding = new System.Windows.Forms.Padding(3);
+            this.LayoutPanelIzquierdo.Size = new System.Drawing.Size(220, 439);
+            this.LayoutPanelIzquierdo.TabIndex = 1;
+            this.LayoutPanelIzquierdo.Paint += new System.Windows.Forms.PaintEventHandler(this.LayoutPanelIzquierdo_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 520);
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.panelIzquierdo);
             this.Controls.Add(this.panelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(800, 429);
+            this.MinimumSize = new System.Drawing.Size(800, 520);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -207,6 +220,7 @@
         private System.Windows.Forms.Panel panelCentral;
         private System.Windows.Forms.Panel panelIzquierdo;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.FlowLayoutPanel LayoutPanelIzquierdo;
     }
 }
 
