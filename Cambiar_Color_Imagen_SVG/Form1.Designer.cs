@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.ResizeForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.panelSuperior = new System.Windows.Forms.Panel();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.btnLogo = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             this.btnMaximizarNormal = new Guna.UI2.WinForms.Guna2Button();
             this.btnCerrar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogo = new Guna.UI2.WinForms.Guna2Button();
-            this.lblLogo = new System.Windows.Forms.Label();
             this.panelIzquierdo = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,32 @@
             this.panelSuperior.Size = new System.Drawing.Size(798, 34);
             this.panelSuperior.TabIndex = 0;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.ForeColor = System.Drawing.Color.White;
+            this.lblLogo.Location = new System.Drawing.Point(41, 7);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(117, 21);
+            this.lblLogo.TabIndex = 5;
+            this.lblLogo.Text = "Código limpio";
+            this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.CheckedState.Parent = this.btnLogo;
+            this.btnLogo.CustomImages.Parent = this.btnLogo;
+            this.btnLogo.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogo.ForeColor = System.Drawing.Color.White;
+            this.btnLogo.HoverState.Parent = this.btnLogo;
+            this.btnLogo.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Código_Limpio;
+            this.btnLogo.Location = new System.Drawing.Point(4, 3);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.ShadowDecoration.Parent = this.btnLogo;
+            this.btnLogo.Size = new System.Drawing.Size(30, 30);
+            this.btnLogo.TabIndex = 4;
             // 
             // btnMinimizar
             // 
@@ -114,32 +140,6 @@
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnLogo
-            // 
-            this.btnLogo.CheckedState.Parent = this.btnLogo;
-            this.btnLogo.CustomImages.Parent = this.btnLogo;
-            this.btnLogo.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogo.ForeColor = System.Drawing.Color.White;
-            this.btnLogo.HoverState.Parent = this.btnLogo;
-            this.btnLogo.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Código_Limpio;
-            this.btnLogo.Location = new System.Drawing.Point(4, 3);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.ShadowDecoration.Parent = this.btnLogo;
-            this.btnLogo.Size = new System.Drawing.Size(30, 30);
-            this.btnLogo.TabIndex = 4;
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(41, 7);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(117, 21);
-            this.lblLogo.TabIndex = 5;
-            this.lblLogo.Text = "Código limpio";
-            this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
-            // 
             // panelIzquierdo
             // 
             this.panelIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(123)))), ((int)(((byte)(225)))));
@@ -149,15 +149,6 @@
             this.panelIzquierdo.Name = "panelIzquierdo";
             this.panelIzquierdo.Size = new System.Drawing.Size(220, 414);
             this.panelIzquierdo.TabIndex = 1;
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Location = new System.Drawing.Point(221, 35);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(578, 414);
-            this.panelCentral.TabIndex = 2;
             // 
             // guna2Button1
             // 
@@ -174,6 +165,15 @@
             this.guna2Button1.Size = new System.Drawing.Size(220, 45);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Acerca de";
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Location = new System.Drawing.Point(221, 35);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(578, 414);
+            this.panelCentral.TabIndex = 2;
             // 
             // Form1
             // 

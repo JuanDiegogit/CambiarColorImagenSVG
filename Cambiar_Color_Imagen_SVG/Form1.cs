@@ -68,5 +68,10 @@ namespace Cambiar_Color_Imagen_SVG
         {
 
         }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
