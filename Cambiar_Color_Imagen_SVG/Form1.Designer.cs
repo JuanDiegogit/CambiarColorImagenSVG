@@ -194,7 +194,6 @@
             this.panelIzquierdo.Name = "panelIzquierdo";
             this.panelIzquierdo.Size = new System.Drawing.Size(220, 504);
             this.panelIzquierdo.TabIndex = 1;
-            this.panelIzquierdo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelIzquierdo_Paint);
             // 
             // btnTamaño
             // 
@@ -232,7 +231,6 @@
             this.panelTamaño.ShadowDecoration.Parent = this.panelTamaño;
             this.panelTamaño.Size = new System.Drawing.Size(210, 172);
             this.panelTamaño.TabIndex = 4;
-            this.panelTamaño.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // btnAmpliar
             // 
@@ -244,8 +242,8 @@
             this.btnAmpliar.TabIndex = 17;
             this.btnAmpliar.TabStop = false;
             this.btnAmpliar.Click += new System.EventHandler(this.btnAmpliar_Click);
-            this.btnAmpliar.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.btnAmpliar.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.btnAmpliar.MouseEnter += new System.EventHandler(this.BtnAmpliar_MouseEnter);
+            this.btnAmpliar.MouseLeave += new System.EventHandler(this.BtnAmpliar_MouseLeave);
             // 
             // nupAlto
             // 
@@ -418,7 +416,6 @@
             this.btnElegirOrigen.TabIndex = 8;
             this.btnElegirOrigen.Text = "Elegir";
             this.btnElegirOrigen.CheckedChanged += new System.EventHandler(this.btnElegirOrigen_CheckedChanged);
-            this.btnElegirOrigen.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // btnColorOrigen
             // 
@@ -476,9 +473,9 @@
             this.btnReducir.Size = new System.Drawing.Size(40, 40);
             this.btnReducir.TabIndex = 18;
             this.btnReducir.TabStop = false;
-            this.btnReducir.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.btnReducir.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.btnReducir.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.btnReducir.Click += new System.EventHandler(this.BtnReducir_Click);
+            this.btnReducir.MouseEnter += new System.EventHandler(this.btnReducir_MouseEnter);
+            this.btnReducir.MouseLeave += new System.EventHandler(this.btnReducir_MouseLeave);
             // 
             // btnAjustar
             // 
@@ -629,7 +626,7 @@
             this.btnColorFondo.Size = new System.Drawing.Size(69, 41);
             this.btnColorFondo.TabIndex = 14;
             this.btnColorFondo.UseVisualStyleBackColor = false;
-            this.btnColorFondo.Click += new System.EventHandler(this.button1_Click);
+            this.btnColorFondo.Click += new System.EventHandler(this.BtnColorFondo_Click);
             // 
             // label1
             // 
@@ -660,8 +657,8 @@
             this.btnElegirDestino.Size = new System.Drawing.Size(58, 28);
             this.btnElegirDestino.TabIndex = 13;
             this.btnElegirDestino.Text = "Elegir";
-            this.btnElegirDestino.CheckedChanged += new System.EventHandler(this.guna2Button2_CheckedChanged);
-            this.btnElegirDestino.Click += new System.EventHandler(this.guna2Button2_Click_2);
+            this.btnElegirDestino.CheckedChanged += new System.EventHandler(this.BtnElegirDestino_CheckedChanged);
+          
             // 
             // guna2Button2
             // 
@@ -681,7 +678,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(115, 35);
             this.guna2Button2.TabIndex = 17;
             this.guna2Button2.Text = "Ajustar";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_3);
+            this.guna2Button2.Click += new System.EventHandler(this.BtnAjustar_Click_3);
             // 
             // Guardar
             // 

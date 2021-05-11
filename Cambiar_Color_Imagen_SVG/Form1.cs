@@ -25,11 +25,12 @@ namespace Cambiar_Color_Imagen_SVG
         [DllImport("user32.dll")]
         private static extern bool GetCursorPos(ref Point lpPoint);
 
+
         [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
         public static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
 
         Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
-        public Color GetColorAt(Point location)
+        public Color GetColor(Point location)
         {
             using (Graphics gdest = Graphics.FromImage(screenPixel))
             {
@@ -94,54 +95,30 @@ namespace Cambiar_Color_Imagen_SVG
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelModerno2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LayoutPanelIzquierdo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+     
+        private void BtnAmpliar_MouseEnter(object sender, EventArgs e)
         {
             btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir_hover; 
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        private void BtnAmpliar_MouseLeave(object sender, EventArgs e)
         {
             btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir;
         }
 
     
 
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        private void btnReducir_MouseEnter(object sender, EventArgs e)
         {
             btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar_hover;
         }
 
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        private void btnReducir_MouseLeave(object sender, EventArgs e)
         {
             btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void BtnReducir_Click(object sender, EventArgs e)
         {
             if (ValidarForm())
             {
@@ -164,22 +141,13 @@ namespace Cambiar_Color_Imagen_SVG
             }
         }
 
-        private void panelIzquierdo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-       
+      
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DialogResult selectResult = filePicker.ShowDialog();
             if (selectResult == System.Windows.Forms.DialogResult.OK)
             {
-                SVGParser.MaximumSize = pickImagen.MaximumSize;
+                
                 SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
                 selectedPath = filePicker.FileName;
                 txtBuscar.Text = selectedPath;
@@ -191,7 +159,7 @@ namespace Cambiar_Color_Imagen_SVG
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnColorFondo_Click(object sender, EventArgs e)
         {
             DialogResult result = colorPicker.ShowDialog();
             if (result == DialogResult.OK)
@@ -235,22 +203,7 @@ namespace Cambiar_Color_Imagen_SVG
             }
         }
 
-        private void btnElegirDestino_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnElegirDestino_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void guna2Button2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_CheckedChanged(object sender, EventArgs e)
+        private void BtnElegirDestino_CheckedChanged(object sender, EventArgs e)
         {
 
             if (btnElegirDestino.Checked)
@@ -299,7 +252,7 @@ namespace Cambiar_Color_Imagen_SVG
             return true;
         }
 
-        private void guna2Button2_Click_3(object sender, EventArgs e)
+        private void BtnAjustar_Click_3(object sender, EventArgs e)
         {
          
             svgDocument.Width = pickImagen.Width;
@@ -314,12 +267,12 @@ namespace Cambiar_Color_Imagen_SVG
             if (ValidarForm())
             foreach (Svg.SvgElement item in svgDocument.Children)
             {
-                ChangeFill(item, btnColorOrigen.BackColor, btnColorDestino.BackColor);
+                CambiarColor(item, btnColorOrigen.BackColor, btnColorDestino.BackColor);
             }
             pickImagen.Image = svgDocument.Draw();
         }
 
-        private void ChangeFill(SvgElement element, Color sourceColor, Color replaceColor)
+        private void CambiarColor(SvgElement element, Color sourceColor, Color replaceColor)
         {
             try
             {
@@ -342,7 +295,7 @@ namespace Cambiar_Color_Imagen_SVG
             {
                 foreach (var item in element.Children)
                 {
-                    ChangeFill(item, sourceColor, replaceColor);
+                    CambiarColor(item, sourceColor, replaceColor);
                 }
             }
 
@@ -359,7 +312,7 @@ namespace Cambiar_Color_Imagen_SVG
                     if (e.Button == System.Windows.Forms.MouseButtons.Left)
                     {
 
-                        btnColorOrigen.BackColor = GetColorAt(Cursor.Position);
+                        btnColorOrigen.BackColor = GetColor(Cursor.Position);
                         btnElegirOrigen.Checked = false;
                     }
                 }
@@ -374,7 +327,7 @@ namespace Cambiar_Color_Imagen_SVG
                     if (e.Button == System.Windows.Forms.MouseButtons.Left)
                     {
 
-                        btnColorDestino.BackColor = GetColorAt(Cursor.Position);
+                        btnColorDestino.BackColor = GetColor(Cursor.Position);
                         btnElegirDestino.Checked = false;
                     }
                 }
@@ -433,7 +386,7 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            SVGParser.MaximumSize = pickImagen.MaximumSize;
+          
             SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
             svgDocument = SVGParser.GetSvgDocument(selectedPath);
             nupAncho.Value = (int)svgDocument.Width.Value;

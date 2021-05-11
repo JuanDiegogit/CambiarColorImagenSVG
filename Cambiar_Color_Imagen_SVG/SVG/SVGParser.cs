@@ -11,10 +11,7 @@ namespace Cambiar_Color_Imagen_SVG.SVG
     static class SVGParser
     {
 
-        /// <summary>
-        /// El máximo tamaño que soporta
-        /// </summary>
-        public static Size MaximumSize { get; set; }
+      
         /// <summary>
         /// El tamaño de inicio
         /// </summary>
