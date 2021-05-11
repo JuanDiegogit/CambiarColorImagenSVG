@@ -16,7 +16,7 @@ namespace Cambiar_Color_Imagen_SVG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormCambiarSVG());
         }
     }
 }

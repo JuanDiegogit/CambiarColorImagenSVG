@@ -63,6 +63,26 @@ namespace Cambiar_Color_Imagen_SVG.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bajar {
+            get {
+                object obj = ResourceManager.GetObject("bajar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bajar_hover {
+            get {
+                object obj = ResourceManager.GetObject("bajar hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -106,6 +126,26 @@ namespace Cambiar_Color_Imagen_SVG.Properties {
         internal static System.Drawing.Bitmap minimizar_2 {
             get {
                 object obj = ResourceManager.GetObject("minimizar 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subir {
+            get {
+                object obj = ResourceManager.GetObject("subir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subir_hover {
+            get {
+                object obj = ResourceManager.GetObject("subir hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

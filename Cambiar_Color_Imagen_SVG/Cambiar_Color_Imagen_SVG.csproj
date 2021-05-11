@@ -256,7 +256,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\subir.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
@@ -271,6 +273,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minimizar 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bajar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bajar hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subir hover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

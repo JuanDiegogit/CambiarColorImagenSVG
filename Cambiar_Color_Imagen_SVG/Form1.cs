@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Cambiar_Color_Imagen_SVG
 {
-    public partial class Form1 : Form
+    public partial class FormCambiarSVG : Form
     {
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -20,7 +20,7 @@ namespace Cambiar_Color_Imagen_SVG
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        public Form1()
+        public FormCambiarSVG()
         {
             InitializeComponent();
             this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
@@ -80,6 +80,48 @@ namespace Cambiar_Color_Imagen_SVG
         }
 
         private void LayoutPanelIzquierdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir_hover; 
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir;
+        }
+
+    
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar_hover;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelIzquierdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
         {
 
         }
