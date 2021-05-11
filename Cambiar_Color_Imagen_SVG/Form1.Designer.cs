@@ -58,6 +58,15 @@
             this.panelherramientas = new System.Windows.Forms.Panel();
             this.pickImagen = new System.Windows.Forms.PictureBox();
             this.btnElegirDestino = new Guna.UI2.WinForms.Guna2Button();
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.lblImagenSVG = new System.Windows.Forms.Label();
+            this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDescargar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
+            this.filePicker = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.panelTamaño.SuspendLayout();
@@ -67,7 +76,9 @@
             this.panelColor.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).BeginInit();
+            this.panelherramientas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
+            this.panelBuscador.SuspendLayout();
             this.SuspendLayout();
             // 
             // ResizeForm
@@ -247,6 +258,11 @@
             this.btnAlto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAlto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnAlto.Location = new System.Drawing.Point(96, 69);
+            this.btnAlto.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.btnAlto.Name = "btnAlto";
             this.btnAlto.ShadowDecoration.Parent = this.btnAlto;
             this.btnAlto.Size = new System.Drawing.Size(100, 36);
@@ -278,6 +294,11 @@
             this.nupAncho.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nupAncho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.nupAncho.Location = new System.Drawing.Point(96, 21);
+            this.nupAncho.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.nupAncho.Name = "nupAncho";
             this.nupAncho.ShadowDecoration.Parent = this.nupAncho;
             this.nupAncho.Size = new System.Drawing.Size(100, 36);
@@ -449,18 +470,24 @@
             // 
             // panelherramientas
             // 
+            this.panelherramientas.Controls.Add(this.label1);
+            this.panelherramientas.Controls.Add(this.button1);
+            this.panelherramientas.Controls.Add(this.btnGuardar);
+            this.panelherramientas.Controls.Add(this.btnDescargar);
+            this.panelherramientas.Controls.Add(this.panelBuscador);
             this.panelherramientas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelherramientas.Location = new System.Drawing.Point(0, 0);
             this.panelherramientas.Name = "panelherramientas";
-            this.panelherramientas.Size = new System.Drawing.Size(578, 107);
+            this.panelherramientas.Size = new System.Drawing.Size(578, 101);
             this.panelherramientas.TabIndex = 0;
             // 
             // pickImagen
             // 
             this.pickImagen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pickImagen.Location = new System.Drawing.Point(0, 107);
+            this.pickImagen.Location = new System.Drawing.Point(0, 101);
             this.pickImagen.Name = "pickImagen";
-            this.pickImagen.Size = new System.Drawing.Size(578, 397);
+            this.pickImagen.Size = new System.Drawing.Size(578, 403);
+            this.pickImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pickImagen.TabIndex = 1;
             this.pickImagen.TabStop = false;
             // 
@@ -481,6 +508,140 @@
             this.btnElegirDestino.Size = new System.Drawing.Size(58, 28);
             this.btnElegirDestino.TabIndex = 13;
             this.btnElegirDestino.Text = "Elegir";
+            // 
+            // panelBuscador
+            // 
+            this.panelBuscador.Controls.Add(this.btnBuscar);
+            this.panelBuscador.Controls.Add(this.txtBuscar);
+            this.panelBuscador.Controls.Add(this.lblImagenSVG);
+            this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBuscador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBuscador.Location = new System.Drawing.Point(0, 0);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(578, 50);
+            this.panelBuscador.TabIndex = 0;
+            // 
+            // lblImagenSVG
+            // 
+            this.lblImagenSVG.AutoSize = true;
+            this.lblImagenSVG.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagenSVG.ForeColor = System.Drawing.Color.White;
+            this.lblImagenSVG.Location = new System.Drawing.Point(6, 14);
+            this.lblImagenSVG.Name = "lblImagenSVG";
+            this.lblImagenSVG.Size = new System.Drawing.Size(107, 19);
+            this.lblImagenSVG.TabIndex = 7;
+            this.lblImagenSVG.Text = "Imagen SVG";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.AutoRoundedCorners = true;
+            this.txtBuscar.BorderRadius = 17;
+            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscar.DefaultText = "";
+            this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBuscar.DisabledState.Parent = this.txtBuscar;
+            this.txtBuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBuscar.Enabled = false;
+            this.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscar.FocusedState.Parent = this.txtBuscar;
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBuscar.HoverState.Parent = this.txtBuscar;
+            this.txtBuscar.Location = new System.Drawing.Point(122, 6);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.PasswordChar = '\0';
+            this.txtBuscar.PlaceholderText = "";
+            this.txtBuscar.SelectedText = "";
+            this.txtBuscar.ShadowDecoration.Parent = this.txtBuscar;
+            this.txtBuscar.Size = new System.Drawing.Size(344, 36);
+            this.txtBuscar.TabIndex = 8;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.AutoRoundedCorners = true;
+            this.btnBuscar.BorderColor = System.Drawing.Color.White;
+            this.btnBuscar.BorderRadius = 16;
+            this.btnBuscar.BorderThickness = 2;
+            this.btnBuscar.CheckedState.Parent = this.btnBuscar;
+            this.btnBuscar.CustomImages.Parent = this.btnBuscar;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.HoverState.Parent = this.btnBuscar;
+            this.btnBuscar.Location = new System.Drawing.Point(472, 6);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.ShadowDecoration.Parent = this.btnBuscar;
+            this.btnBuscar.Size = new System.Drawing.Size(102, 35);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnDescargar
+            // 
+            this.btnDescargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDescargar.AutoRoundedCorners = true;
+            this.btnDescargar.BorderColor = System.Drawing.Color.White;
+            this.btnDescargar.BorderRadius = 16;
+            this.btnDescargar.BorderThickness = 2;
+            this.btnDescargar.CheckedState.Parent = this.btnDescargar;
+            this.btnDescargar.CustomImages.Parent = this.btnDescargar;
+            this.btnDescargar.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnDescargar.ForeColor = System.Drawing.Color.White;
+            this.btnDescargar.HoverState.Parent = this.btnDescargar;
+            this.btnDescargar.Location = new System.Drawing.Point(343, 58);
+            this.btnDescargar.Name = "btnDescargar";
+            this.btnDescargar.ShadowDecoration.Parent = this.btnDescargar;
+            this.btnDescargar.Size = new System.Drawing.Size(115, 35);
+            this.btnDescargar.TabIndex = 15;
+            this.btnDescargar.Text = "Descargar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.AutoRoundedCorners = true;
+            this.btnGuardar.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.BorderRadius = 16;
+            this.btnGuardar.BorderThickness = 2;
+            this.btnGuardar.CheckedState.Parent = this.btnGuardar;
+            this.btnGuardar.CustomImages.Parent = this.btnGuardar;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.HoverState.Parent = this.btnGuardar;
+            this.btnGuardar.Location = new System.Drawing.Point(472, 58);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ShadowDecoration.Parent = this.btnGuardar;
+            this.btnGuardar.Size = new System.Drawing.Size(102, 35);
+            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.Text = "Guardar";
+            // 
+            // filePicker
+            // 
+            this.filePicker.FileName = "openFileDialog1";
+            this.filePicker.Filter = "SVG(*.SVG)|*.SVG";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(7, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 41);
+            this.button1.TabIndex = 14;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(82, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 19);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Color del fondo";
             // 
             // FormCambiarSVG
             // 
@@ -508,7 +669,11 @@
             this.panelColor.PerformLayout();
             this.panelCentral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).EndInit();
+            this.panelherramientas.ResumeLayout(false);
+            this.panelherramientas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -543,6 +708,15 @@
         private System.Windows.Forms.PictureBox pickImagen;
         private System.Windows.Forms.Panel panelherramientas;
         private Guna.UI2.WinForms.Guna2Button btnElegirDestino;
+        private System.Windows.Forms.Panel panelBuscador;
+        private Guna.UI2.WinForms.Guna2Button btnBuscar;
+        private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
+        private System.Windows.Forms.Label lblImagenSVG;
+        private Guna.UI2.WinForms.Guna2Button btnGuardar;
+        private Guna.UI2.WinForms.Guna2Button btnDescargar;
+        private System.Windows.Forms.OpenFileDialog filePicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

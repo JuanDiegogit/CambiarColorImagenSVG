@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cambiar_Color_Imagen_SVG.SVG;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,11 @@ namespace Cambiar_Color_Imagen_SVG
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+
+        //Declaración de variables
+        private string selectedPath;
+        private Svg.SvgDocument svgDocument;
 
         public FormCambiarSVG()
         {
@@ -124,6 +130,23 @@ namespace Cambiar_Color_Imagen_SVG
         private void guna2Button4_Click(object sender, EventArgs e)
         {
 
+        }
+       
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DialogResult selectResult = filePicker.ShowDialog();
+            if (selectResult == System.Windows.Forms.DialogResult.OK)
+            {
+                SVGParser.MaximumSize = pickImagen.MaximumSize;
+                SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
+                selectedPath = filePicker.FileName;
+                txtBuscar.Text = selectedPath;
+                svgDocument = SVGParser.GetSvgDocument(selectedPath);
+                nupAncho.Value = (int) svgDocument.Width.Value;
+                btnAlto.Value = (int)  svgDocument.Height.Value;
+                //pickImagen.Image =   svgDocument.Draw();
+                pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
+            }
         }
     }
 }
