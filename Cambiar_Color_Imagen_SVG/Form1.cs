@@ -1,9 +1,11 @@
 ﻿using Cambiar_Color_Imagen_SVG.SVG;
+using Svg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,7 +22,29 @@ namespace Cambiar_Color_Imagen_SVG
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        [DllImport("user32.dll")]
+        private static extern bool GetCursorPos(ref Point lpPoint);
 
+        [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
+        public static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
+
+        Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
+        public Color GetColorAt(Point location)
+        {
+            using (Graphics gdest = Graphics.FromImage(screenPixel))
+            {
+                using (Graphics gsrc = Graphics.FromHwnd(IntPtr.Zero))
+                {
+                    IntPtr hSrcDC = gsrc.GetHdc();
+                    IntPtr hDC = gdest.GetHdc();
+                    int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
+                    gdest.ReleaseHdc();
+                    gsrc.ReleaseHdc();
+                }
+            }
+
+            return screenPixel.GetPixel(0, 0);
+        }
 
         //Declaración de variables
         private string selectedPath;
@@ -162,8 +186,8 @@ namespace Cambiar_Color_Imagen_SVG
                 svgDocument = SVGParser.GetSvgDocument(selectedPath);
                 nupAncho.Value = (int) svgDocument.Width.Value;
                 nupAlto.Value = (int)  svgDocument.Height.Value;
-                //pickImagen.Image =   svgDocument.Draw();
                 pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
+                Guardar.FileName = filePicker.FileName;
             }
         }
 
@@ -197,8 +221,10 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void btnElegirOrigen_CheckedChanged(object sender, EventArgs e)
         {
+           
             if (btnElegirOrigen.Checked)
             {
+                btnElegirDestino.Checked = false;
                 btnElegirOrigen.FillColor = Color.LightPink;
                 pickImagen.Cursor = Cursors.Cross;
             }
@@ -226,15 +252,18 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void guna2Button2_CheckedChanged(object sender, EventArgs e)
         {
+
             if (btnElegirDestino.Checked)
             {
+
+                btnElegirOrigen.Checked = false;
                 btnElegirDestino.FillColor = Color.LightPink;
-                Cursor = Cursors.Cross;
+                pickImagen.Cursor = Cursors.Cross;
             }
             else
             {
                 btnElegirDestino.FillColor = Color.FromArgb(94, 148, 255);
-                Cursor = Cursors.Default;
+                pickImagen.Cursor = Cursors.Default;
             }
         }
 
@@ -272,7 +301,149 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void guna2Button2_Click_3(object sender, EventArgs e)
         {
-          
+         
+            svgDocument.Width = pickImagen.Width;
+            svgDocument.Height = pickImagen.Height;
+            nupAncho.Value = (int)svgDocument.Width.Value;
+            nupAlto.Value = (int)svgDocument.Height.Value;
+            pickImagen.Image = svgDocument.Draw();
+        }
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            if (ValidarForm())
+            foreach (Svg.SvgElement item in svgDocument.Children)
+            {
+                ChangeFill(item, btnColorOrigen.BackColor, btnColorDestino.BackColor);
+            }
+            pickImagen.Image = svgDocument.Draw();
+        }
+
+        private void ChangeFill(SvgElement element, Color sourceColor, Color replaceColor)
+        {
+            try
+            {
+                if (element is SvgPath)
+                {
+
+                    if (((element as SvgPath).Fill as SvgColourServer).Colour.ToArgb() == sourceColor.ToArgb())
+                    {
+                        (element as SvgPath).Fill = new SvgColourServer(replaceColor);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+            if (element.Children.Count > 0)
+            {
+                foreach (var item in element.Children)
+                {
+                    ChangeFill(item, sourceColor, replaceColor);
+                }
+            }
+
+        }
+
+        private void pickImagen_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (btnElegirOrigen.Checked)
+            {
+                if (ValidarForm())
+                {
+
+
+                    if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                    {
+
+                        btnColorOrigen.BackColor = GetColorAt(Cursor.Position);
+                        btnElegirOrigen.Checked = false;
+                    }
+                }
+            }
+
+            if (btnElegirDestino.Checked)
+            {
+                if (ValidarForm())
+                {
+
+
+                    if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                    {
+
+                        btnColorDestino.BackColor = GetColorAt(Cursor.Position);
+                        btnElegirDestino.Checked = false;
+                    }
+                }
+            }
+        }
+
+        private void nupAncho_ValueChanged(object sender, EventArgs e)
+        {
+            int W = (int)nupAncho.Value;
+            int H = (int)nupAlto.Value;
+
+            if (W != 0 && H !=0 && pickImagen.Image != null)
+            {
+
+                if (ValidarForm())
+                {
+                    svgDocument.Width = W;
+                    svgDocument.Height = H;
+
+                    pickImagen.Image = svgDocument.Draw();
+                }
+
+            }
+        }
+
+        private void nupAlto_ValueChanged(object sender, EventArgs e)
+        {
+
+            int W = (int)nupAncho.Value;
+            int H = (int)nupAlto.Value;
+
+            if (W != 0 && H != 0 && pickImagen.Image != null)
+            {
+                if (ValidarForm())
+                {
+                    svgDocument.Width = W;
+                    svgDocument.Height = H;
+
+                    pickImagen.Image = svgDocument.Draw();
+                }
+
+            }
+        }
+
+        private void btnDescargar_Click(object sender, EventArgs e)
+        {
+            if (ValidarForm())
+            {
+                Guardar.FileName = Guardar.FileName.ToString().Replace(".SVG", ".PNG").Replace(".svg", ".png");
+                Image Imagen = pickImagen.Image;
+                Guardar.ShowDialog();
+                Imagen.Save(Guardar.FileName);
+            }
+           
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            SVGParser.MaximumSize = pickImagen.MaximumSize;
+            SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
+            svgDocument = SVGParser.GetSvgDocument(selectedPath);
+            nupAncho.Value = (int)svgDocument.Width.Value;
+            nupAlto.Value = (int)svgDocument.Height.Value;
+            pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
+        }
+
+        private void BtnAcerca_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Este software fue hecho por Juan Diego\npara el canal de código Limpio");
         }
     }
 }
