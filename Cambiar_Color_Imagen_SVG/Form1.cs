@@ -119,7 +119,25 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            if (ValidarForm())
+            {
+                int W = (int)nupAncho.Value;
+                int H = (int)nupAlto.Value;
 
+                if ((W - 10) > 0 && (H - 10) > 0)
+                {
+                    W -= 10;
+                    nupAncho.Value = W;
+
+                    H -= 10;
+                    nupAlto.Value = H;
+
+                    svgDocument.Width = W;
+                    svgDocument.Height = H;
+
+                    pickImagen.Image = svgDocument.Draw();
+                }
+            }
         }
 
         private void panelIzquierdo_Paint(object sender, PaintEventArgs e)
@@ -143,10 +161,118 @@ namespace Cambiar_Color_Imagen_SVG
                 txtBuscar.Text = selectedPath;
                 svgDocument = SVGParser.GetSvgDocument(selectedPath);
                 nupAncho.Value = (int) svgDocument.Width.Value;
-                btnAlto.Value = (int)  svgDocument.Height.Value;
+                nupAlto.Value = (int)  svgDocument.Height.Value;
                 //pickImagen.Image =   svgDocument.Draw();
                 pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = colorPicker.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                btnColorFondo.BackColor = colorPicker.Color;
+                pickImagen.BackColor = colorPicker.Color;
+            }
+        }
+
+        private void btnColorOrigen_Click(object sender, EventArgs e)
+        {
+            DialogResult result = colorPicker.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                btnColorOrigen.BackColor = colorPicker.Color;
+            }
+        }
+
+        private void btnColorDestino_Click(object sender, EventArgs e)
+        {
+            DialogResult result = colorPicker.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                btnColorDestino.BackColor = colorPicker.Color;
+            }
+        }
+
+        private void btnElegirOrigen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnElegirOrigen.Checked)
+            {
+                btnElegirOrigen.FillColor = Color.LightPink;
+                pickImagen.Cursor = Cursors.Cross;
+            }
+            else
+            {
+                btnElegirOrigen.FillColor = Color.FromArgb(94,148, 255);
+                pickImagen.Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnElegirDestino_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnElegirDestino_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void guna2Button2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnElegirDestino.Checked)
+            {
+                btnElegirDestino.FillColor = Color.LightPink;
+                Cursor = Cursors.Cross;
+            }
+            else
+            {
+                btnElegirDestino.FillColor = Color.FromArgb(94, 148, 255);
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private void btnAmpliar_Click(object sender, EventArgs e)
+        {
+            if (ValidarForm())
+            {
+                int W = (int)nupAncho.Value;
+                int H = (int)nupAlto.Value;
+
+                if ((W + 10) < pickImagen.Width && (H + 10) < pickImagen.Height)
+                {
+                    W += 10;
+                    nupAncho.Value = W;
+
+                    H += 10;
+                    nupAlto.Value = H;
+
+                    svgDocument.Width = W;
+                    svgDocument.Height = H;
+
+                    pickImagen.Image = svgDocument.Draw();
+                }
+            }
+        }
+        private bool ValidarForm()
+        {
+            if (svgDocument == null || pickImagen.Image == null)
+            {
+                MessageBox.Show("Por favor, Seleccione una imagen SVG");
+                return false;
+            }
+            return true;
+        }
+
+        private void guna2Button2_Click_3(object sender, EventArgs e)
+        {
+          
         }
     }
 }

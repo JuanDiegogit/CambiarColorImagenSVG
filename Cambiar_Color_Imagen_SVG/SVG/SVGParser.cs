@@ -52,8 +52,8 @@ namespace Cambiar_Color_Imagen_SVG.SVG
         /// <returns>Returns a resized or the original document depending on the document.</returns>
         private static SvgDocument AdjustSize(SvgDocument document)
         {
-            document.Width= SizeInicio.Width;
-            document.Height = SizeInicio.Height;
+                document.Width = SizeInicio.Width;
+                document.Height = SizeInicio.Height;                
 
             return document;
         }

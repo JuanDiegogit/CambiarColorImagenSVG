@@ -40,7 +40,7 @@
             this.btnTamaño = new Guna.UI2.WinForms.Guna2Button();
             this.panelTamaño = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAmpliar = new System.Windows.Forms.PictureBox();
-            this.btnAlto = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.nupAlto = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.lblAlto = new System.Windows.Forms.Label();
             this.nupAncho = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.lblAncho = new System.Windows.Forms.Label();
@@ -55,9 +55,8 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.btnReducir = new System.Windows.Forms.PictureBox();
-            this.panelherramientas = new System.Windows.Forms.Panel();
+            this.btnAjustar = new System.Windows.Forms.Panel();
             this.pickImagen = new System.Windows.Forms.PictureBox();
-            this.btnElegirDestino = new Guna.UI2.WinForms.Guna2Button();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.lblImagenSVG = new System.Windows.Forms.Label();
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,18 +64,21 @@
             this.btnDescargar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.filePicker = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnColorFondo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.colorPicker = new System.Windows.Forms.ColorDialog();
+            this.btnElegirDestino = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panelSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.panelTamaño.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAlto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupAlto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAncho)).BeginInit();
             this.panelColor.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).BeginInit();
-            this.panelherramientas.SuspendLayout();
+            this.btnAjustar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.panelBuscador.SuspendLayout();
             this.SuspendLayout();
@@ -220,7 +222,7 @@
             this.panelTamaño.BorderThickness = 2;
             this.panelTamaño.Controls.Add(this.btnReducir);
             this.panelTamaño.Controls.Add(this.btnAmpliar);
-            this.panelTamaño.Controls.Add(this.btnAlto);
+            this.panelTamaño.Controls.Add(this.nupAlto);
             this.panelTamaño.Controls.Add(this.lblAlto);
             this.panelTamaño.Controls.Add(this.nupAncho);
             this.panelTamaño.Controls.Add(this.lblAncho);
@@ -240,33 +242,34 @@
             this.btnAmpliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAmpliar.TabIndex = 17;
             this.btnAmpliar.TabStop = false;
+            this.btnAmpliar.Click += new System.EventHandler(this.btnAmpliar_Click);
             this.btnAmpliar.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.btnAmpliar.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
-            // btnAlto
+            // nupAlto
             // 
-            this.btnAlto.BackColor = System.Drawing.Color.Transparent;
-            this.btnAlto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnAlto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnAlto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.btnAlto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnAlto.DisabledState.Parent = this.btnAlto;
-            this.btnAlto.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.btnAlto.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.btnAlto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnAlto.FocusedState.Parent = this.btnAlto;
-            this.btnAlto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAlto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.btnAlto.Location = new System.Drawing.Point(96, 69);
-            this.btnAlto.Maximum = new decimal(new int[] {
+            this.nupAlto.BackColor = System.Drawing.Color.Transparent;
+            this.nupAlto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nupAlto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.nupAlto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.nupAlto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nupAlto.DisabledState.Parent = this.nupAlto;
+            this.nupAlto.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.nupAlto.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.nupAlto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nupAlto.FocusedState.Parent = this.nupAlto;
+            this.nupAlto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nupAlto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.nupAlto.Location = new System.Drawing.Point(96, 69);
+            this.nupAlto.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
-            this.btnAlto.Name = "btnAlto";
-            this.btnAlto.ShadowDecoration.Parent = this.btnAlto;
-            this.btnAlto.Size = new System.Drawing.Size(100, 36);
-            this.btnAlto.TabIndex = 16;
+            this.nupAlto.Name = "nupAlto";
+            this.nupAlto.ShadowDecoration.Parent = this.nupAlto;
+            this.nupAlto.Size = new System.Drawing.Size(100, 36);
+            this.nupAlto.TabIndex = 16;
             // 
             // lblAlto
             // 
@@ -390,6 +393,7 @@
             this.btnColorDestino.Size = new System.Drawing.Size(69, 41);
             this.btnColorDestino.TabIndex = 9;
             this.btnColorDestino.UseVisualStyleBackColor = false;
+            this.btnColorDestino.Click += new System.EventHandler(this.btnColorDestino_Click);
             // 
             // btnElegirOrigen
             // 
@@ -397,6 +401,7 @@
             this.btnElegirOrigen.BorderColor = System.Drawing.Color.White;
             this.btnElegirOrigen.BorderRadius = 13;
             this.btnElegirOrigen.BorderThickness = 2;
+            this.btnElegirOrigen.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnElegirOrigen.CheckedState.Parent = this.btnElegirOrigen;
             this.btnElegirOrigen.CustomImages.Parent = this.btnElegirOrigen;
             this.btnElegirOrigen.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -408,6 +413,7 @@
             this.btnElegirOrigen.Size = new System.Drawing.Size(58, 28);
             this.btnElegirOrigen.TabIndex = 8;
             this.btnElegirOrigen.Text = "Elegir";
+            this.btnElegirOrigen.CheckedChanged += new System.EventHandler(this.btnElegirOrigen_CheckedChanged);
             this.btnElegirOrigen.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // btnColorOrigen
@@ -418,6 +424,7 @@
             this.btnColorOrigen.Size = new System.Drawing.Size(69, 41);
             this.btnColorOrigen.TabIndex = 7;
             this.btnColorOrigen.UseVisualStyleBackColor = false;
+            this.btnColorOrigen.Click += new System.EventHandler(this.btnColorOrigen_Click);
             // 
             // lblColorRemplazar
             // 
@@ -449,7 +456,7 @@
             // 
             this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
             this.panelCentral.Controls.Add(this.pickImagen);
-            this.panelCentral.Controls.Add(this.panelherramientas);
+            this.panelCentral.Controls.Add(this.btnAjustar);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(221, 35);
             this.panelCentral.Name = "panelCentral";
@@ -468,18 +475,19 @@
             this.btnReducir.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             this.btnReducir.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
-            // panelherramientas
+            // btnAjustar
             // 
-            this.panelherramientas.Controls.Add(this.label1);
-            this.panelherramientas.Controls.Add(this.button1);
-            this.panelherramientas.Controls.Add(this.btnGuardar);
-            this.panelherramientas.Controls.Add(this.btnDescargar);
-            this.panelherramientas.Controls.Add(this.panelBuscador);
-            this.panelherramientas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelherramientas.Location = new System.Drawing.Point(0, 0);
-            this.panelherramientas.Name = "panelherramientas";
-            this.panelherramientas.Size = new System.Drawing.Size(578, 101);
-            this.panelherramientas.TabIndex = 0;
+            this.btnAjustar.Controls.Add(this.guna2Button2);
+            this.btnAjustar.Controls.Add(this.label1);
+            this.btnAjustar.Controls.Add(this.btnColorFondo);
+            this.btnAjustar.Controls.Add(this.btnGuardar);
+            this.btnAjustar.Controls.Add(this.btnDescargar);
+            this.btnAjustar.Controls.Add(this.panelBuscador);
+            this.btnAjustar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAjustar.Location = new System.Drawing.Point(0, 0);
+            this.btnAjustar.Name = "btnAjustar";
+            this.btnAjustar.Size = new System.Drawing.Size(578, 101);
+            this.btnAjustar.TabIndex = 0;
             // 
             // pickImagen
             // 
@@ -490,24 +498,6 @@
             this.pickImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pickImagen.TabIndex = 1;
             this.pickImagen.TabStop = false;
-            // 
-            // btnElegirDestino
-            // 
-            this.btnElegirDestino.AutoRoundedCorners = true;
-            this.btnElegirDestino.BorderColor = System.Drawing.Color.White;
-            this.btnElegirDestino.BorderRadius = 13;
-            this.btnElegirDestino.BorderThickness = 2;
-            this.btnElegirDestino.CheckedState.Parent = this.btnElegirDestino;
-            this.btnElegirDestino.CustomImages.Parent = this.btnElegirDestino;
-            this.btnElegirDestino.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnElegirDestino.ForeColor = System.Drawing.Color.White;
-            this.btnElegirDestino.HoverState.Parent = this.btnElegirDestino;
-            this.btnElegirDestino.Location = new System.Drawing.Point(97, 127);
-            this.btnElegirDestino.Name = "btnElegirDestino";
-            this.btnElegirDestino.ShadowDecoration.Parent = this.btnElegirDestino;
-            this.btnElegirDestino.Size = new System.Drawing.Size(58, 28);
-            this.btnElegirDestino.TabIndex = 13;
-            this.btnElegirDestino.Text = "Elegir";
             // 
             // panelBuscador
             // 
@@ -623,14 +613,15 @@
             this.filePicker.FileName = "openFileDialog1";
             this.filePicker.Filter = "SVG(*.SVG)|*.SVG";
             // 
-            // button1
+            // btnColorFondo
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(7, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 41);
-            this.button1.TabIndex = 14;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnColorFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.btnColorFondo.Location = new System.Drawing.Point(7, 55);
+            this.btnColorFondo.Name = "btnColorFondo";
+            this.btnColorFondo.Size = new System.Drawing.Size(69, 41);
+            this.btnColorFondo.TabIndex = 14;
+            this.btnColorFondo.UseVisualStyleBackColor = false;
+            this.btnColorFondo.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -642,6 +633,47 @@
             this.label1.Size = new System.Drawing.Size(128, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Color del fondo";
+            // 
+            // btnElegirDestino
+            // 
+            this.btnElegirDestino.AutoRoundedCorners = true;
+            this.btnElegirDestino.BorderColor = System.Drawing.Color.White;
+            this.btnElegirDestino.BorderRadius = 13;
+            this.btnElegirDestino.BorderThickness = 2;
+            this.btnElegirDestino.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnElegirDestino.CheckedState.Parent = this.btnElegirDestino;
+            this.btnElegirDestino.CustomImages.Parent = this.btnElegirDestino;
+            this.btnElegirDestino.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnElegirDestino.ForeColor = System.Drawing.Color.White;
+            this.btnElegirDestino.HoverState.Parent = this.btnElegirDestino;
+            this.btnElegirDestino.Location = new System.Drawing.Point(98, 125);
+            this.btnElegirDestino.Name = "btnElegirDestino";
+            this.btnElegirDestino.ShadowDecoration.Parent = this.btnElegirDestino;
+            this.btnElegirDestino.Size = new System.Drawing.Size(58, 28);
+            this.btnElegirDestino.TabIndex = 13;
+            this.btnElegirDestino.Text = "Elegir";
+            this.btnElegirDestino.CheckedChanged += new System.EventHandler(this.guna2Button2_CheckedChanged);
+            this.btnElegirDestino.Click += new System.EventHandler(this.guna2Button2_Click_2);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button2.AutoRoundedCorners = true;
+            this.guna2Button2.BorderColor = System.Drawing.Color.White;
+            this.guna2Button2.BorderRadius = 16;
+            this.guna2Button2.BorderThickness = 2;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(222, 57);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(115, 35);
+            this.guna2Button2.TabIndex = 17;
+            this.guna2Button2.Text = "Ajustar";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_3);
             // 
             // FormCambiarSVG
             // 
@@ -663,14 +695,14 @@
             this.panelTamaño.ResumeLayout(false);
             this.panelTamaño.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAlto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupAlto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAncho)).EndInit();
             this.panelColor.ResumeLayout(false);
             this.panelColor.PerformLayout();
             this.panelCentral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).EndInit();
-            this.panelherramientas.ResumeLayout(false);
-            this.panelherramientas.PerformLayout();
+            this.btnAjustar.ResumeLayout(false);
+            this.btnAjustar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();
             this.panelBuscador.ResumeLayout(false);
             this.panelBuscador.PerformLayout();
@@ -699,15 +731,14 @@
         private System.Windows.Forms.Label lblColorxRemplazar;
         private System.Windows.Forms.Button btnColorDestino;
         private Guna.UI2.WinForms.Guna2Button btnElegirOrigen;
-        private Guna.UI2.WinForms.Guna2NumericUpDown btnAlto;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nupAlto;
         private System.Windows.Forms.Label lblAlto;
         private Guna.UI2.WinForms.Guna2NumericUpDown nupAncho;
         private System.Windows.Forms.Label lblAncho;
         private System.Windows.Forms.PictureBox btnAmpliar;
         private System.Windows.Forms.PictureBox btnReducir;
         private System.Windows.Forms.PictureBox pickImagen;
-        private System.Windows.Forms.Panel panelherramientas;
-        private Guna.UI2.WinForms.Guna2Button btnElegirDestino;
+        private System.Windows.Forms.Panel btnAjustar;
         private System.Windows.Forms.Panel panelBuscador;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
@@ -716,7 +747,10 @@
         private Guna.UI2.WinForms.Guna2Button btnDescargar;
         private System.Windows.Forms.OpenFileDialog filePicker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnColorFondo;
+        private System.Windows.Forms.ColorDialog colorPicker;
+        private Guna.UI2.WinForms.Guna2Button btnElegirDestino;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
 
