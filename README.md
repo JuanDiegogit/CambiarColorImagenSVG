@@ -1,6 +1,9 @@
 # Cambiar el color de una imagen SVG
-
  [**Descargar Instalador**](https://github.com/JuanDiegogit/CambiarColorImagenSVG/files/6467584/ImagenSVG.zip)
+
+![Cambiar color Imagen SVG](https://user-images.githubusercontent.com/65135568/118011367-8f03ad00-b315-11eb-8920-de40a7f49f3c.png)
+
+
 
 
 Este proyecto permite reemplazar el color de una imagen SVG por otro, y la opción de descargarlo en una imagen.
