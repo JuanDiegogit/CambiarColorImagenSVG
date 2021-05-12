@@ -189,35 +189,42 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void btnElegirOrigen_CheckedChanged(object sender, EventArgs e)
         {
-           
-            if (btnElegirOrigen.Checked)
+            if (ValidarForm())
             {
-                btnElegirDestino.Checked = false;
-                btnElegirOrigen.FillColor = Color.LightPink;
-                pickImagen.Cursor = Cursors.Cross;
+                if (btnElegirOrigen.Checked)
+                {
+                    btnElegirDestino.Checked = false;
+                    btnElegirOrigen.FillColor = Color.LightPink;
+                    pickImagen.Cursor = Cursors.Cross;
+                }
+                else
+                {
+                    btnElegirOrigen.FillColor = Color.FromArgb(94, 148, 255);
+                    pickImagen.Cursor = Cursors.Default;
+                }
             }
-            else
-            {
-                btnElegirOrigen.FillColor = Color.FromArgb(94,148, 255);
-                pickImagen.Cursor = Cursors.Default;
-            }
+               
         }
 
         private void BtnElegirDestino_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (btnElegirDestino.Checked)
+            if (ValidarForm())
             {
+                if (btnElegirDestino.Checked)
+                {
 
-                btnElegirOrigen.Checked = false;
-                btnElegirDestino.FillColor = Color.LightPink;
-                pickImagen.Cursor = Cursors.Cross;
+                    btnElegirOrigen.Checked = false;
+                    btnElegirDestino.FillColor = Color.LightPink;
+                    pickImagen.Cursor = Cursors.Cross;
+                }
+                else
+                {
+                    btnElegirDestino.FillColor = Color.FromArgb(94, 148, 255);
+                    pickImagen.Cursor = Cursors.Default;
+                }
             }
-            else
-            {
-                btnElegirDestino.FillColor = Color.FromArgb(94, 148, 255);
-                pickImagen.Cursor = Cursors.Default;
-            }
+           
         }
 
         private void btnAmpliar_Click(object sender, EventArgs e)
@@ -254,22 +261,28 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void BtnAjustar_Click_3(object sender, EventArgs e)
         {
-         
-            svgDocument.Width = pickImagen.Width;
-            svgDocument.Height = pickImagen.Height;
-            nupAncho.Value = (int)svgDocument.Width.Value;
-            nupAlto.Value = (int)svgDocument.Height.Value;
-            pickImagen.Image = svgDocument.Draw();
+            if (ValidarForm())
+            {
+                svgDocument.Width = pickImagen.Width;
+                svgDocument.Height = pickImagen.Height;
+                nupAncho.Value = pickImagen.Width;
+                nupAlto.Value = pickImagen.Height;
+                pickImagen.Image = svgDocument.Draw();
+            }
+          
         }
 
         private void btnCambiar_Click(object sender, EventArgs e)
         {
             if (ValidarForm())
-            foreach (Svg.SvgElement item in svgDocument.Children)
             {
-                CambiarColor(item, btnColorOrigen.BackColor, btnColorDestino.BackColor);
+                foreach (Svg.SvgElement item in svgDocument.Children)
+                {
+                    CambiarColor(item, btnColorOrigen.BackColor, btnColorDestino.BackColor);
+                }
+                pickImagen.Image = svgDocument.Draw();
             }
-            pickImagen.Image = svgDocument.Draw();
+         
         }
 
         private void CambiarColor(SvgElement element, Color sourceColor, Color replaceColor)
@@ -336,40 +349,48 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void nupAncho_ValueChanged(object sender, EventArgs e)
         {
-            int W = (int)nupAncho.Value;
-            int H = (int)nupAlto.Value;
-
-            if (W != 0 && H !=0 && pickImagen.Image != null)
+            if (ValidarForm())
             {
+                int W = (int)nupAncho.Value;
+                int H = (int)nupAlto.Value;
 
-                if (ValidarForm())
+                if (W != 0 && H != 0 && pickImagen.Image != null)
                 {
-                    svgDocument.Width = W;
-                    svgDocument.Height = H;
 
-                    pickImagen.Image = svgDocument.Draw();
+                    if (ValidarForm())
+                    {
+                        svgDocument.Width = W;
+                        svgDocument.Height = H;
+
+                        pickImagen.Image = svgDocument.Draw();
+                    }
+
                 }
-
             }
+           
         }
 
         private void nupAlto_ValueChanged(object sender, EventArgs e)
         {
 
-            int W = (int)nupAncho.Value;
-            int H = (int)nupAlto.Value;
-
-            if (W != 0 && H != 0 && pickImagen.Image != null)
+            if (ValidarForm())
             {
-                if (ValidarForm())
+                int W = (int)nupAncho.Value;
+                int H = (int)nupAlto.Value;
+
+                if (W != 0 && H != 0 && pickImagen.Image != null)
                 {
-                    svgDocument.Width = W;
-                    svgDocument.Height = H;
+                    if (ValidarForm())
+                    {
+                        svgDocument.Width = W;
+                        svgDocument.Height = H;
 
-                    pickImagen.Image = svgDocument.Draw();
+                        pickImagen.Image = svgDocument.Draw();
+                    }
+
                 }
-
             }
+           
         }
 
         private void btnDescargar_Click(object sender, EventArgs e)
@@ -386,12 +407,15 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-          
-            SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
-            svgDocument = SVGParser.GetSvgDocument(selectedPath);
-            nupAncho.Value = (int)svgDocument.Width.Value;
-            nupAlto.Value = (int)svgDocument.Height.Value;
-            pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
+            if (ValidarForm())
+            {
+                SVGParser.SizeInicio = new Size(pickImagen.Width, pickImagen.Height);
+                svgDocument = SVGParser.GetSvgDocument(selectedPath);
+                nupAncho.Value = (int)svgDocument.Width.Value;
+                nupAlto.Value = (int)svgDocument.Height.Value;
+                pickImagen.Image = SVGParser.GetBitmapFromSVG(selectedPath);
+            }
+             
         }
 
         private void BtnAcerca_Click(object sender, EventArgs e)
