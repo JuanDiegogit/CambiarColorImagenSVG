@@ -22,6 +22,7 @@ namespace Cambiar_Color_Imagen_SVG
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         [DllImport("user32.dll")]
         private static extern bool GetCursorPos(ref Point lpPoint);
 
@@ -349,8 +350,7 @@ namespace Cambiar_Color_Imagen_SVG
 
         private void nupAncho_ValueChanged(object sender, EventArgs e)
         {
-            if (ValidarForm())
-            {
+         
                 int W = (int)nupAncho.Value;
                 int H = (int)nupAlto.Value;
 
@@ -366,15 +366,14 @@ namespace Cambiar_Color_Imagen_SVG
                     }
 
                 }
-            }
+            
            
         }
 
         private void nupAlto_ValueChanged(object sender, EventArgs e)
         {
 
-            if (ValidarForm())
-            {
+           
                 int W = (int)nupAncho.Value;
                 int H = (int)nupAlto.Value;
 
@@ -389,7 +388,7 @@ namespace Cambiar_Color_Imagen_SVG
                     }
 
                 }
-            }
+            
            
         }
 
