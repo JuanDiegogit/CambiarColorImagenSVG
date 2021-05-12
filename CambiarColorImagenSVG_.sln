@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1500
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cambiar_Color_Imagen_SVG", "Cambiar_Color_Imagen_SVG\Cambiar_Color_Imagen_SVG.csproj", "{143DA69C-6989-4F3D-82FC-D33A39853C1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CambiarColorImagenSVG", "Cambiar_Color_Imagen_SVG\CambiarColorImagenSVG.csproj", "{143DA69C-6989-4F3D-82FC-D33A39853C1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
