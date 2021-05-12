@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCambiarSVG));
             this.ResizeForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
@@ -692,6 +693,7 @@
             this.Controls.Add(this.panelIzquierdo);
             this.Controls.Add(this.panelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 540);
             this.Name = "FormCambiarSVG";
             this.Padding = new System.Windows.Forms.Padding(1);
