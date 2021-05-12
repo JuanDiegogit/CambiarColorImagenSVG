@@ -33,15 +33,9 @@
             this.ResizeForm = new Guna.UI2.WinForms.Guna2ResizeForm(this.components);
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
-            this.btnLogo = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMaximizarNormal = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCerrar = new Guna.UI2.WinForms.Guna2Button();
             this.panelIzquierdo = new System.Windows.Forms.Panel();
             this.btnTamaño = new Guna.UI2.WinForms.Guna2Button();
             this.panelTamaño = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnReducir = new System.Windows.Forms.PictureBox();
-            this.btnAmpliar = new System.Windows.Forms.PictureBox();
             this.nupAlto = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.lblAlto = new System.Windows.Forms.Label();
             this.nupAncho = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -57,10 +51,9 @@
             this.lblColorRemplazar = new System.Windows.Forms.Label();
             this.btnAcerca = new Guna.UI2.WinForms.Guna2Button();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.pickImagen = new System.Windows.Forms.PictureBox();
             this.panelAjustar = new System.Windows.Forms.Panel();
             this.btnAjustar = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblColorFondo = new System.Windows.Forms.Label();
             this.btnColorFondo = new System.Windows.Forms.Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnDescargar = new Guna.UI2.WinForms.Guna2Button();
@@ -71,18 +64,25 @@
             this.filePicker = new System.Windows.Forms.OpenFileDialog();
             this.colorPicker = new System.Windows.Forms.ColorDialog();
             this.Guardar = new System.Windows.Forms.SaveFileDialog();
+            this.pickImagen = new System.Windows.Forms.PictureBox();
+            this.btnReducir = new System.Windows.Forms.PictureBox();
+            this.btnAmpliar = new System.Windows.Forms.PictureBox();
+            this.btnLogo = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMaximizarNormal = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCerrar = new Guna.UI2.WinForms.Guna2Button();
             this.panelSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.panelTamaño.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAlto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAncho)).BeginInit();
             this.panelColor.SuspendLayout();
             this.panelCentral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
             this.panelAjustar.SuspendLayout();
             this.panelBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).BeginInit();
             this.SuspendLayout();
             // 
             // ResizeForm
@@ -115,72 +115,6 @@
             this.lblLogo.TabIndex = 5;
             this.lblLogo.Text = "Código limpio";
             this.lblLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLogo_MouseDown);
-            // 
-            // btnLogo
-            // 
-            this.btnLogo.CheckedState.Parent = this.btnLogo;
-            this.btnLogo.CustomImages.Parent = this.btnLogo;
-            this.btnLogo.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogo.ForeColor = System.Drawing.Color.White;
-            this.btnLogo.HoverState.Parent = this.btnLogo;
-            this.btnLogo.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Código_Limpio;
-            this.btnLogo.Location = new System.Drawing.Point(4, 3);
-            this.btnLogo.Name = "btnLogo";
-            this.btnLogo.ShadowDecoration.Parent = this.btnLogo;
-            this.btnLogo.Size = new System.Drawing.Size(30, 30);
-            this.btnLogo.TabIndex = 4;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.CheckedState.Parent = this.btnMinimizar;
-            this.btnMinimizar.CustomImages.Parent = this.btnMinimizar;
-            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.HoverState.Parent = this.btnMinimizar;
-            this.btnMinimizar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.minimizar_2;
-            this.btnMinimizar.Location = new System.Drawing.Point(692, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.ShadowDecoration.Parent = this.btnMinimizar;
-            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimizar.TabIndex = 3;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizarNormal
-            // 
-            this.btnMaximizarNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizarNormal.CheckedState.Parent = this.btnMaximizarNormal;
-            this.btnMaximizarNormal.CustomImages.Parent = this.btnMaximizarNormal;
-            this.btnMaximizarNormal.FillColor = System.Drawing.Color.Transparent;
-            this.btnMaximizarNormal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMaximizarNormal.ForeColor = System.Drawing.Color.White;
-            this.btnMaximizarNormal.HoverState.Parent = this.btnMaximizarNormal;
-            this.btnMaximizarNormal.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Maximizar;
-            this.btnMaximizarNormal.Location = new System.Drawing.Point(728, 0);
-            this.btnMaximizarNormal.Name = "btnMaximizarNormal";
-            this.btnMaximizarNormal.ShadowDecoration.Parent = this.btnMaximizarNormal;
-            this.btnMaximizarNormal.Size = new System.Drawing.Size(30, 30);
-            this.btnMaximizarNormal.TabIndex = 2;
-            this.btnMaximizarNormal.Click += new System.EventHandler(this.btnMaximizarNormal_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.CheckedState.Parent = this.btnCerrar;
-            this.btnCerrar.CustomImages.Parent = this.btnCerrar;
-            this.btnCerrar.FillColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.HoverState.Parent = this.btnCerrar;
-            this.btnCerrar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.close;
-            this.btnCerrar.Location = new System.Drawing.Point(764, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.ShadowDecoration.Parent = this.btnCerrar;
-            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelIzquierdo
             // 
@@ -232,31 +166,6 @@
             this.panelTamaño.ShadowDecoration.Parent = this.panelTamaño;
             this.panelTamaño.Size = new System.Drawing.Size(210, 172);
             this.panelTamaño.TabIndex = 4;
-            // 
-            // btnReducir
-            // 
-            this.btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar;
-            this.btnReducir.Location = new System.Drawing.Point(114, 121);
-            this.btnReducir.Name = "btnReducir";
-            this.btnReducir.Size = new System.Drawing.Size(40, 40);
-            this.btnReducir.TabIndex = 18;
-            this.btnReducir.TabStop = false;
-            this.btnReducir.Click += new System.EventHandler(this.BtnReducir_Click);
-            this.btnReducir.MouseEnter += new System.EventHandler(this.btnReducir_MouseEnter);
-            this.btnReducir.MouseLeave += new System.EventHandler(this.btnReducir_MouseLeave);
-            // 
-            // btnAmpliar
-            // 
-            this.btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir;
-            this.btnAmpliar.Location = new System.Drawing.Point(53, 120);
-            this.btnAmpliar.Name = "btnAmpliar";
-            this.btnAmpliar.Size = new System.Drawing.Size(40, 40);
-            this.btnAmpliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAmpliar.TabIndex = 17;
-            this.btnAmpliar.TabStop = false;
-            this.btnAmpliar.Click += new System.EventHandler(this.btnAmpliar_Click);
-            this.btnAmpliar.MouseEnter += new System.EventHandler(this.BtnAmpliar_MouseEnter);
-            this.btnAmpliar.MouseLeave += new System.EventHandler(this.BtnAmpliar_MouseLeave);
             // 
             // nupAlto
             // 
@@ -498,21 +407,10 @@
             this.panelCentral.Size = new System.Drawing.Size(578, 504);
             this.panelCentral.TabIndex = 2;
             // 
-            // pickImagen
-            // 
-            this.pickImagen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pickImagen.Location = new System.Drawing.Point(0, 101);
-            this.pickImagen.Name = "pickImagen";
-            this.pickImagen.Size = new System.Drawing.Size(578, 403);
-            this.pickImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pickImagen.TabIndex = 1;
-            this.pickImagen.TabStop = false;
-            this.pickImagen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pickImagen_MouseDown);
-            // 
             // panelAjustar
             // 
             this.panelAjustar.Controls.Add(this.btnAjustar);
-            this.panelAjustar.Controls.Add(this.label1);
+            this.panelAjustar.Controls.Add(this.lblColorFondo);
             this.panelAjustar.Controls.Add(this.btnColorFondo);
             this.panelAjustar.Controls.Add(this.btnGuardar);
             this.panelAjustar.Controls.Add(this.btnDescargar);
@@ -543,16 +441,16 @@
             this.btnAjustar.Text = "Ajustar";
             this.btnAjustar.Click += new System.EventHandler(this.BtnAjustar_Click_3);
             // 
-            // label1
+            // lblColorFondo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(82, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 19);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Color del fondo";
+            this.lblColorFondo.AutoSize = true;
+            this.lblColorFondo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColorFondo.ForeColor = System.Drawing.Color.Black;
+            this.lblColorFondo.Location = new System.Drawing.Point(82, 67);
+            this.lblColorFondo.Name = "lblColorFondo";
+            this.lblColorFondo.Size = new System.Drawing.Size(128, 19);
+            this.lblColorFondo.TabIndex = 14;
+            this.lblColorFondo.Text = "Color del fondo";
             // 
             // btnColorFondo
             // 
@@ -684,6 +582,108 @@
             // 
             this.Guardar.Filter = "PNG(*.PNG)|*:PNG|JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
             // 
+            // pickImagen
+            // 
+            this.pickImagen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pickImagen.Location = new System.Drawing.Point(0, 101);
+            this.pickImagen.Name = "pickImagen";
+            this.pickImagen.Size = new System.Drawing.Size(578, 403);
+            this.pickImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pickImagen.TabIndex = 1;
+            this.pickImagen.TabStop = false;
+            this.pickImagen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pickImagen_MouseDown);
+            // 
+            // btnReducir
+            // 
+            this.btnReducir.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.bajar;
+            this.btnReducir.Location = new System.Drawing.Point(114, 121);
+            this.btnReducir.Name = "btnReducir";
+            this.btnReducir.Size = new System.Drawing.Size(40, 40);
+            this.btnReducir.TabIndex = 18;
+            this.btnReducir.TabStop = false;
+            this.btnReducir.Click += new System.EventHandler(this.BtnReducir_Click);
+            this.btnReducir.MouseEnter += new System.EventHandler(this.btnReducir_MouseEnter);
+            this.btnReducir.MouseLeave += new System.EventHandler(this.btnReducir_MouseLeave);
+            // 
+            // btnAmpliar
+            // 
+            this.btnAmpliar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.subir;
+            this.btnAmpliar.Location = new System.Drawing.Point(53, 120);
+            this.btnAmpliar.Name = "btnAmpliar";
+            this.btnAmpliar.Size = new System.Drawing.Size(40, 40);
+            this.btnAmpliar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAmpliar.TabIndex = 17;
+            this.btnAmpliar.TabStop = false;
+            this.btnAmpliar.Click += new System.EventHandler(this.btnAmpliar_Click);
+            this.btnAmpliar.MouseEnter += new System.EventHandler(this.BtnAmpliar_MouseEnter);
+            this.btnAmpliar.MouseLeave += new System.EventHandler(this.BtnAmpliar_MouseLeave);
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.CheckedState.Parent = this.btnLogo;
+            this.btnLogo.CustomImages.Parent = this.btnLogo;
+            this.btnLogo.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogo.ForeColor = System.Drawing.Color.White;
+            this.btnLogo.HoverState.Parent = this.btnLogo;
+            this.btnLogo.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Cambiar_color_Imagen_SVG;
+            this.btnLogo.Location = new System.Drawing.Point(4, 3);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.ShadowDecoration.Parent = this.btnLogo;
+            this.btnLogo.Size = new System.Drawing.Size(30, 30);
+            this.btnLogo.TabIndex = 4;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.CheckedState.Parent = this.btnMinimizar;
+            this.btnMinimizar.CustomImages.Parent = this.btnMinimizar;
+            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimizar.ForeColor = System.Drawing.Color.White;
+            this.btnMinimizar.HoverState.Parent = this.btnMinimizar;
+            this.btnMinimizar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.minimizar_2;
+            this.btnMinimizar.Location = new System.Drawing.Point(692, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.ShadowDecoration.Parent = this.btnMinimizar;
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.TabIndex = 3;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizarNormal
+            // 
+            this.btnMaximizarNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizarNormal.CheckedState.Parent = this.btnMaximizarNormal;
+            this.btnMaximizarNormal.CustomImages.Parent = this.btnMaximizarNormal;
+            this.btnMaximizarNormal.FillColor = System.Drawing.Color.Transparent;
+            this.btnMaximizarNormal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMaximizarNormal.ForeColor = System.Drawing.Color.White;
+            this.btnMaximizarNormal.HoverState.Parent = this.btnMaximizarNormal;
+            this.btnMaximizarNormal.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.Maximizar;
+            this.btnMaximizarNormal.Location = new System.Drawing.Point(728, 0);
+            this.btnMaximizarNormal.Name = "btnMaximizarNormal";
+            this.btnMaximizarNormal.ShadowDecoration.Parent = this.btnMaximizarNormal;
+            this.btnMaximizarNormal.Size = new System.Drawing.Size(30, 30);
+            this.btnMaximizarNormal.TabIndex = 2;
+            this.btnMaximizarNormal.Click += new System.EventHandler(this.btnMaximizarNormal_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.CheckedState.Parent = this.btnCerrar;
+            this.btnCerrar.CustomImages.Parent = this.btnCerrar;
+            this.btnCerrar.FillColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.HoverState.Parent = this.btnCerrar;
+            this.btnCerrar.Image = global::Cambiar_Color_Imagen_SVG.Properties.Resources.close;
+            this.btnCerrar.Location = new System.Drawing.Point(764, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.ShadowDecoration.Parent = this.btnCerrar;
+            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FormCambiarSVG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,18 +704,18 @@
             this.panelIzquierdo.ResumeLayout(false);
             this.panelTamaño.ResumeLayout(false);
             this.panelTamaño.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAlto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAncho)).EndInit();
             this.panelColor.ResumeLayout(false);
             this.panelColor.PerformLayout();
             this.panelCentral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();
             this.panelAjustar.ResumeLayout(false);
             this.panelAjustar.PerformLayout();
             this.panelBuscador.ResumeLayout(false);
             this.panelBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pickImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReducir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAmpliar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,7 +756,7 @@
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnDescargar;
         private System.Windows.Forms.OpenFileDialog filePicker;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblColorFondo;
         private System.Windows.Forms.Button btnColorFondo;
         private System.Windows.Forms.ColorDialog colorPicker;
         private Guna.UI2.WinForms.Guna2Button btnElegirDestino;
